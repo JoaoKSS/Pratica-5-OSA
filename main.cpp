@@ -11,7 +11,7 @@
 int main() {
     string arquivoCSV = "booksDataset.csv";
     string arquivoBinario = "dadosBinario.bin";
-    string arquivoIndex = "Index.txt";
+    string arquivoIndex = "Index.bin";
     string arquivoStopwords = "stopwords_en.txt";
     string arquivoPontuacoes = "pontuacoes.txt";
     string arquivoIndiceInvertido = "indiceInvertido.bin";

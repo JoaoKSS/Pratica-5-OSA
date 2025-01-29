@@ -38,12 +38,13 @@ void Buffer::escreverDescritor(const vector<Registro>& registros) {
     // arvoreIndices.Print();
     arquivoSaida.close();
     // Abre o arquivo de índice para escrita
-    ofstream arquivoIndex(nomeArquivoIndex, ios::trunc);
+    ofstream arquivoIndex(nomeArquivoIndex, ios::binary | ios::trunc);
     if (!arquivoIndex.is_open())
         throw runtime_error("Erro ao abrir o arquivo de índice.");
     // Escreve todos os índices no arquivo
     for (const Index& index : indices) {
-        arquivoIndex << index.id << "|" << index.endereco << "\n";
+        arquivoIndex.write(reinterpret_cast<const char*>(&index.id), sizeof(index.id));
+        arquivoIndex.write(reinterpret_cast<const char*>(&index.endereco), sizeof(index.endereco));
     }
     arquivoIndex.close();
 }
@@ -140,12 +141,13 @@ void Buffer::adicionarRegistros(const vector<Registro>& registros) {
     }
     arquivoSaida.close();
     // escreve no arquivo de índice para escrita
-    ofstream arquivoIndex(nomeArquivoIndex, ios::app);
+    ofstream arquivoIndex(nomeArquivoIndex, ios::binary | ios::app);
     if (!arquivoIndex.is_open())
         throw runtime_error("Erro ao abrir o arquivo de índice.");
     // Escreve todos os índices no arquivo
     for (const Index& index : indices) {
-        arquivoIndex << index.id << "|" << index.endereco << "\n";
+        arquivoIndex.write(reinterpret_cast<const char*>(&index.id), sizeof(index.id));
+        arquivoIndex.write(reinterpret_cast<const char*>(&index.endereco), sizeof(index.endereco));
     }
     arquivoIndex.close();
 }
