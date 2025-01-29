@@ -1,6 +1,6 @@
 #include "Buffer.h"
 #include "Index.h"
-#include "arvore.h"
+#include "Arvore.h"
 #include <stdexcept>
 #include <fstream>
 #include <iostream>

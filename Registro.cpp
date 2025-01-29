@@ -4,7 +4,6 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <sstream>
 
 Registro::Registro() : ID(0), title(""), authors(""), publishYear(0), category("") {}
 
