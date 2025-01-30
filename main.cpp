@@ -1,3 +1,13 @@
+
+
+/*
+
+Para compilar o projeto, execute o seguinte comando no terminal: 
+make run e apos isso insira o partes do titulo ou ele completo para realizar a busca
+
+*/
+
+
 #include "Buffer.h"
 #include "Registro.h"
 #include "Index.h"
