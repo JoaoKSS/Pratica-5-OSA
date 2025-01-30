@@ -36,6 +36,11 @@ bool read(stringstream& ss, string& campo) {
 
 // Método para carregar registros de um arquivo CSV
 bool Registro::carregarDoCSV(const string& arquivoCSV, vector<Registro>& registros) {
+    // Se a lista de registros já estiver populada não ler novamente
+    if (!registros.empty()) {
+        return true;
+    }
+    
     ifstream arquivoIn(arquivoCSV);
     if (!arquivoIn) {
         cerr << "Erro ao abrir o arquivo CSV: " << arquivoCSV << endl;
