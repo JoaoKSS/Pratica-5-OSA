@@ -4,7 +4,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <vector>
-#include "arvore.h"
+#include "Arvore.h"
 #include <unordered_map>
 #include <unordered_set>
 using namespace std;
